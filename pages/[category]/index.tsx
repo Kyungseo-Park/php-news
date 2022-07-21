@@ -38,7 +38,9 @@ export const getServerSideProps: GetServerSideProps = withGetServerSideProps(asy
   // const { data } = await axios.get<API.GET.Articles>(
   //   `https://php-news-api.kkyungvelyy.com/api/v1/articles/${category}`,
   // );
-  const { data } = await axios.get<API.GET.Articles.ALL>(`http://localhost:8000/api/v1/articles/${category}`);
+  const { data } = await axios.get<API.GET.Articles.ALL>(
+    `https://php-news-api.kkyungvelyy.com/api/v1/articles/${category}`,
+  );
 
   return {
     props: {

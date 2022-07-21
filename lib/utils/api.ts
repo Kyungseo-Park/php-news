@@ -34,7 +34,7 @@ export default async function withAxios(requestConfig: RequestConfig) {
 
   const response = await instance.request({
     ...requestConfig,
-    baseURL: `http://localhost:8000/api/v1`,
+    baseURL: `https://php-news-api.kkyungvelyy.com/api/v1`,
     validateStatus: (status) => [...(requestConfig.suppressStatusCode || [])].includes(status) || status < 500,
   });
 

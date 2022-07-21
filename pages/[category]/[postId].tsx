@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
       notFound: true,
     };
   }
-  const paths = `http://localhost:8000/api/v1/articles/${category}/${postId}`;
+  const paths = `https://php-news-api.kkyungvelyy.com/api/v1/articles/${category}/${postId}`;
 
   try {
     const { data } = await axios.get<API.GET.Articles.ID>(paths);
@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
 };
 
 export async function getStaticPaths() {
-  const { data } = await axios.get<API.GET.Articles.ALL>("http://localhost:8000/api/v1/articles");
+  const { data } = await axios.get<API.GET.Articles.ALL>("https://php-news-api.kkyungvelyy.com/api/v1/articles");
   const paths = data.data.map((post) => ({
     params: {
       category: post?.category.toString(),

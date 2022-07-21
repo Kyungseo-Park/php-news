@@ -20,7 +20,7 @@ const Home = ({ articles }: { articles: Article[] }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { data } = await axios.get<API.GET.Articles.ALL>("http://localhost:8000/api/v1/articles");
+  const { data } = await axios.get<API.GET.Articles.ALL>("https://php-news-api.kkyungvelyy.com/api/v1/articles");
   return {
     props: { articles: data.data }, // will be passed to the page component as props
   };
