@@ -6,8 +6,6 @@ import { API, Article } from "types/article";
 import ArticleDetail from "@components/ArticleDetail";
 
 const Page = ({ article, content }: { article: Article; content: any }) => {
-  console.log(article, content);
-
   return (
     <Layout
       title={article.translated_title}
