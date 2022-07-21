@@ -8,10 +8,10 @@ import ArticleDetail from "@components/ArticleDetail";
 const Page = ({ article, content }: { article: Article; content: any }) => {
   return (
     <Layout
-      title={article.translated_title}
-      summary={article.translated_description}
-      image={article.thumbnail}
-      date={article.publish_date}
+      title={article?.translated_title}
+      summary={article?.translated_description}
+      image={article?.thumbnail}
+      date={article?.publish_date}
       type="article"
     >
       <ArticleDetail content={content} />
