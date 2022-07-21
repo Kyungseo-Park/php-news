@@ -68,10 +68,7 @@ export const MobileNav = ({ navShow, setNavShow }: Props) => {
             </div>
           </div>
           {NavLinks.map((link) => (
-            <div
-              key={link.title}
-              className="border-b border-border-primary dark:border-border-primary-dark"
-            >
+            <div key={link.title} className="border-b border-border-primary dark:border-border-primary-dark">
               <Link
                 href={link.href}
                 className="block py-4 px-2 text-base font-bold tracking-widest transition-colors duration-200 hover:bg-body-secondary hover:dark:bg-body-secondary-dark"

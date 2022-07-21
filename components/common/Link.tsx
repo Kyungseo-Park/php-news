@@ -3,11 +3,10 @@ import React from "react";
 import { HiExternalLink } from "react-icons/hi";
 
 const CustomLink = ({
-                      href,
-                      children,
-                      ...rest
-                    }: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement>) => {
+  href,
+  children,
+  ...rest
+}: React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>) => {
   const isInternalLink = href && href.startsWith("/");
   const isAnchorLink = href && href.startsWith("#");
 

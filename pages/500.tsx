@@ -1,12 +1,8 @@
-import type {  NextPage } from "next";
+import React from "react";
+import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-
-  return (
-    <></>
-  );
+  return <></>;
 };
-
-
 
 export default Home;

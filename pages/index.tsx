@@ -1,3 +1,4 @@
+import React from "react";
 import type { GetServerSideProps, NextPage } from "next";
 import MainContainer from "../container/main/MainContainer";
 import axios from "axios";

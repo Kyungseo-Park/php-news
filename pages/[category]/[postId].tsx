@@ -4,6 +4,7 @@ import Layout from "@components/Layouts";
 import { isCategory } from "@lib/utils/isCategory";
 import { API, Article } from "types/article";
 import ArticleDetail from "@components/ArticleDetail";
+import React from "react";
 
 const Page = ({ article, content }: { article: Article; content: any }) => {
   return (

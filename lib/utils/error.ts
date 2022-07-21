@@ -1,8 +1,5 @@
 export function isInstanceOfAPIError(object: unknown): object is ApiError {
-  return (
-    object instanceof ApiError &&
-    ("redirectUrl" in object || "notFound" in object)
-  );
+  return object instanceof ApiError && ("redirectUrl" in object || "notFound" in object);
 }
 
 export class ApiError extends Error {
@@ -34,4 +31,3 @@ export class AuthError extends ApiError {
 
   redirectUrl = "/auth";
 }
-  

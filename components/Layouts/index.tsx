@@ -32,9 +32,7 @@ export default function Layout(props: SeoProps) {
 
   meta["title"] = props.templateTitle ? ` ${props.templateTitle}丨${meta.siteName}` : meta.title;
 
-  meta["description"] = props.description
-    ? props.description
-    : "모던 PHP 유저 그룹에서 운영하는 PHP 소식..";
+  meta["description"] = props.description ? props.description : "모던 PHP 유저 그룹에서 운영하는 PHP 소식..";
 
   return (
     <div className="flex flex-col justify-between">

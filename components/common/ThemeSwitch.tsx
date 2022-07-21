@@ -13,13 +13,7 @@ const ThemeSwitch = () => {
   React.useEffect(() => setMounted(true), []);
 
   return (
-    <Tooltip
-      content={
-        theme === "dark" || resolvedTheme === "dark"
-          ? "Switch To Light Mode"
-          : "Switch To Dark Mode"
-      }
-    >
+    <Tooltip content={theme === "dark" || resolvedTheme === "dark" ? "Switch To Light Mode" : "Switch To Dark Mode"}>
       <motion.button
         className="ml-1 flex h-11 w-11 items-center justify-center bg-transparent p-0 text-lg sm:ml-4"
         whileHover={{
@@ -33,17 +27,9 @@ const ThemeSwitch = () => {
         }}
         aria-label="Toggle Dark Mode"
         type="button"
-        onClick={() =>
-          setTheme(
-            theme === "dark" || resolvedTheme === "dark" ? "light" : "dark",
-          )
-        }
+        onClick={() => setTheme(theme === "dark" || resolvedTheme === "dark" ? "light" : "dark")}
       >
-        {mounted && (theme === "dark" || resolvedTheme === "dark") ? (
-          <FaSun size={20} />
-        ) : (
-          <FaMoon size={20} />
-        )}
+        {mounted && (theme === "dark" || resolvedTheme === "dark") ? <FaSun size={20} /> : <FaMoon size={20} />}
       </motion.button>
     </Tooltip>
   );

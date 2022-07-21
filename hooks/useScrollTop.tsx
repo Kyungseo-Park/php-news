@@ -1,13 +1,12 @@
-
 import throttle from "lodash/throttle";
-import React from 'react';
+import React from "react";
 
 export default function useScrollSpy() {
   const [activeSection, setActiveSection] = React.useState<string | null>(null);
   const throttleMs = 100;
 
   const actionSectionScrollSpy = throttle(() => {
-    const sections = document.getElementsByClassName('anchor');
+    const sections = document.getElementsByClassName("anchor");
 
     let prevBBox = null;
     let currentSectionId = activeSection;
@@ -16,7 +15,7 @@ export default function useScrollSpy() {
       const section = sections[i];
 
       if (!currentSectionId) {
-        currentSectionId = section.getAttribute('href')?.split('#')[1] ?? null;
+        currentSectionId = section.getAttribute("href")?.split("#")[1] ?? null;
       }
 
       const bbox = section.getBoundingClientRect();
@@ -25,7 +24,7 @@ export default function useScrollSpy() {
 
       // GetBoundingClientRect returns values relative to viewport
       if (bbox.top - offset < 0) {
-        currentSectionId = section.getAttribute('href')?.split('#')[1] ?? null;
+        currentSectionId = section.getAttribute("href")?.split("#")[1] ?? null;
 
         prevBBox = bbox;
         continue;
@@ -39,12 +38,12 @@ export default function useScrollSpy() {
   }, throttleMs);
 
   React.useEffect(() => {
-    window.addEventListener('scroll', actionSectionScrollSpy);
+    window.addEventListener("scroll", actionSectionScrollSpy);
 
     actionSectionScrollSpy();
 
     return () => {
-      window.removeEventListener('scroll', actionSectionScrollSpy);
+      window.removeEventListener("scroll", actionSectionScrollSpy);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

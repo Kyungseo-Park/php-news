@@ -1,3 +1,4 @@
+import React from "react";
 import { Article } from "types/article";
 
 const ArticleCard = ({ article }: { article: Article }) => {
@@ -10,9 +11,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
         <img src={article.thumbnail} />
         <div className="mt-14 px-4">
           <span>{article.publish_date}</span>
-          <h2 className="mt-4 text-2xl text-base font-medium text-black-400">
-            {article.translated_title}
-          </h2>
+          <h2 className="mt-4 text-2xl text-base font-medium text-black-400">{article.translated_title}</h2>
           <p className="mt-2 text-gray-700">{article.translated_description}</p>
         </div>
       </article>

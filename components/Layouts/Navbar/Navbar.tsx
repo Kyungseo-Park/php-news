@@ -12,10 +12,7 @@ import { MobileNav } from "./MobileNav";
 import { NavLinks } from "./NavLinks";
 import ReadingProgressBar from "../../common/ReadingProgressBar";
 
-
-function NavItem({ href, text }: {
-  href: string, text: string
-}) {
+function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
   const isActive = router.asPath === href;
 
@@ -23,17 +20,13 @@ function NavItem({ href, text }: {
     <Link
       className={cn(
         "hidden rounded-lg py-1 px-2 font-medium transition-all sm:inline-block sm:py-3 md:px-4",
-        isActive
-          ? "text-brand"
-          : "text-typeface-primary dark:text-typeface-primary-dark",
+        isActive ? "text-brand" : "text-typeface-primary dark:text-typeface-primary-dark",
       )}
       href={href}
     >
       <span className="relative">
         {text}
-        {isActive && (
-          <div className="absolute top-full mt-2 h-1 w-full rounded-2xl bg-brand opacity-80" />
-        )}
+        {isActive && <div className="absolute top-full mt-2 h-1 w-full rounded-2xl bg-brand opacity-80" />}
       </span>
     </Link>
   );
@@ -62,12 +55,11 @@ export const Navbar = () => {
           isTop
             ? "dark:bg-transparent"
             : navShow
-              ? "bg-body dark:bg-body-dark"
-              : "bg-body/75  backdrop-blur dark:bg-body-dark-75 ",
+            ? "bg-body dark:bg-body-dark"
+            : "bg-body/75  backdrop-blur dark:bg-body-dark-75 ",
         )}
       >
-        <div
-          className="relative mx-auto flex max-w-5xl items-center justify-between divide-x divide-border-primary py-2 px-4 dark:divide-border-primary-dark xl:px-0">
+        <div className="relative mx-auto flex max-w-5xl items-center justify-between divide-x divide-border-primary py-2 px-4 dark:divide-border-primary-dark xl:px-0">
           <div className="flex items-center text-sm font-medium">
             <div className="sm:hidden">
               <Tooltip content="Home">

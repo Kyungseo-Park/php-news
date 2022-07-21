@@ -1,3 +1,4 @@
+import React from "react";
 import { Article } from "types/article";
 
 const ArticleDetail = ({ content }: { content: string }) => {

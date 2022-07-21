@@ -3,7 +3,8 @@ import { GetServerSideProps } from "next";
 import ArticleCard from "@components/2.0/ArticleCard";
 import withGetServerSideProps from "lib/utils/withServerSideProps";
 import Layout from "@components/Layouts";
-import { API, Article, Category } from "types/article";
+import { API, Article } from "types/article";
+import React from "react";
 
 function Page({ articles, category }: { articles: Article[]; category: string }) {
   return (
