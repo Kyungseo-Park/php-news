@@ -15,7 +15,7 @@ const Page = ({ article, content }: { article: Article; content: any }) => {
       date={article?.publish_date}
       type="article"
     >
-      <ArticleDetail content={content} data={article.content} />
+      <ArticleDetail content={content} data={article?.content} />
     </Layout>
   );
 };
